@@ -1,0 +1,394 @@
+/* Custom Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-delay-1 { animation-delay: 0.2s; }
+.fade-delay-2 { animation-delay: 0.4s; }
+.fade-delay-3 { animation-delay: 0.6s; }
+
+.fade-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Ripple Effect */
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Buttons & Cards */
+.btn-primary {
+  display: inline-block;
+  background-color: #facc15; /* yellow-400 */
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: #fcd34d; /* lighter yellow */
+  transform: scale(1.05);
+}
+
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Form inputs */
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  color: #1f2937;
+}
+
+/* Ripple Style */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-effect 600ms linear;
+  background-color: rgba(193, 13, 13, 0.3);
+  pointer-events: none;
+}
+/* Navbar link animation */
+nav a {
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+/* Underline effect */
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #d4180e; /* yellow-400 */
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #facc15; /* yellow-400 */
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Optional bounce on click */
+nav a:active {
+  transform: scale(0.95);
+}
+/* Optional: Add a soft shadow to the logo */
+header img {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.05);
+}
+/* Example: Make logo circular */
+header img {
+  border-radius: 50%; /* fully circular */
+}
+/* OR: Rounded corners only (not a full circle) */
+header img {
+  border-radius: 0.rem; /* adjust this value as needed */
+}
+/* Body background with subtle gradient */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+  color: #1f2937;
+  line-height: 1.7;
+  transition: all 0.3s ease;
+}
+
+/* Add soft section shadows and rounded corners */
+section {
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+  background-color: white;
+}
+
+/* Improve heading styles */
+h2, h3, h4 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph styling */
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* Container center alignment */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Smooth section fade on load (already applied with JS) */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Subtle scroll effect already in place from before */
+
+/* Improved input styling */
+.form-input {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #facc15;
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.3);
+}
+
+/* Animated section hover */
+section:hover {
+  transform: scale(1.01);
+  transition: transform 0.3s ease;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+section {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+body.loaded section {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease;
+}
+/* Change the border radius of portfolio images */
+.work-item img {
+  border-radius: 40px; /* Adjust this value to increase or decrease roundness */
+  transition: transform 0.3s ease; /* Optional smooth hover effect */
+}
+
+/* Optional: Add a subtle zoom on hover */
+.work-item img:hover {
+  transform: scale(1.05);
+}
+/* Initial state for all sections */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Active state to trigger animation */
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Container and general section styling */
+#contact {
+  background-color: #1a202c; /* Tailwind's bg-gray-900 */
+  color: white;
+  padding: 5rem 1rem; /* py-20 equivalent */
+  animation: fadeUp 1s ease-out;
+}
+
+/* Fade-up animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 1s ease-out;
+}
+
+/* Form container */
+.container {
+  max-width: 100%; /* Tailwind's max-w-2xl */
+  margin: 300;
+  padding: 1rem;
+}
+/* Contact Section Container */
+.contact-section {
+  background: linear-gradient(135deg, #1f2937, #111827); /* gray-800 to gray-900 */
+  padding: 5rem 1rem;
+}
+
+/* Contact Card */
+.contact-card {
+  background-color: #ffffff;
+  color: #1f2937;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Headings */
+.contact-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Input Fields */
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db; /* gray-300 */
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Focus */
+.contact-card input:focus,
+.contact-card textarea:focus {
+  outline: none;
+  border-color: #3b82f6; /* blue-500 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
+}
+
+/* Button */
+.contact-card button {
+  background-color: #2563eb; /* blue-600 */
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button Hover */
+.contact-card button:hover {
+  background-color: #1d4ed8; /* blue-700 */
+}
+/* Reset margin & padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main footer background */
+.footer {
+  background-color: #1e293b; /* Dark blue */
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Main footer content */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 30px 30px 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+/* Footer columns */
+.footer-column {
+  flex: 1 1 180px;
+  min-width: 180px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #475569;
+  padding-bottom: 5px;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+.footer-column ul li:hover {
+  text-decoration: underline;
+}
+
+/* Bottom copyright section */
+.footer-bottom {
+  background-color: #121a28; /* Slightly darker */
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: #ffffff;
+  border-top: 1px solid #99a1ad;
+}
+
+
+
+
